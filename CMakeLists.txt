@@ -901,6 +901,8 @@ if(BUILD_EGL)
         FOLDER "OpenGL"
         COMPILE_DEFINITIONS "EGL_EGLEXT_PROTOTYPES; EGLAPI=; NO_SANITIZE_FUNCTION=;"
         PREFIX ""
+        VERSION 1.0.0
+        SOVERSION 1
     )
     set_target_export_map(libEGL ${SOURCE_DIR}/OpenGL/libEGL)
     target_link_libraries(libEGL ${OS_LIBS})
@@ -931,6 +933,8 @@ if(BUILD_GLESv2)
         FOLDER "OpenGL"
         COMPILE_DEFINITIONS "GL_GLEXT_PROTOTYPES; GL_API=; GL_APICALL=; NO_SANITIZE_FUNCTION=;"
         PREFIX ""
+        VERSION 2.0.0
+        SOVERSION 2
     )
     set_target_export_map(libGLESv2 ${SOURCE_DIR}/OpenGL/libGLESv2)
     target_link_libraries(libGLESv2 SwiftShader ${Reactor} GLCompiler ${OS_LIBS})
